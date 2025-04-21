@@ -5,11 +5,15 @@
      <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Cliente</h1>
-    <div id="messages"></div>
-    <div>
-        <input id="input" placeholder="Escribe un mensaje">
-        <button onclick="sendMessage()">Enviar</button>
+    
+    <div class="container">
+        <h1>Cliente</h1>
+        <div id="messages"></div>
+        <div class="controls">
+            <input id="input" placeholder="Escribe un mensaje">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+        <!-- fin del contenedor con controles -->
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
