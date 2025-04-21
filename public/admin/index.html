@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel Admin</title>
+</head>
+<body>
+    <h1>Administrador</h1>
+    <select id="clientList"></select>
+    <div id="messages"></div>
+    <input id="input" placeholder="Mensaje al cliente">
+    <button onclick="sendMessage()">Enviar</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+
