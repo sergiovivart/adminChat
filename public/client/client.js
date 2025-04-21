@@ -4,7 +4,7 @@ socket.emit('register', 'client');
 
 socket.on('message-from-admin', ({ message }) => {
     const div = document.getElementById('messages');
-    div.innerHTML += `<p><strong>Admin:</strong> ${message}</p>`;
+    div.innerHTML += `<p class="mensajeAdmin"><strong>Admin:</strong> ${message}</p>`;
 });
 
 function sendMessage() {
@@ -15,6 +15,6 @@ function sendMessage() {
         message: msg
     });
     const div = document.getElementById('messages');
-    div.innerHTML += `<p><strong>Yo:</strong> ${msg}</p>`;
+    div.innerHTML += `<p class=mensajeYo><strong>Yo:</strong> ${msg}</p>`;
     input.value = '';
 }

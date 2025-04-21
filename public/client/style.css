@@ -9,8 +9,7 @@ body {
 .container {
     background-color: grey;
     width: 500px;
-    height: 600px;
-    text-align: center;
+    height: 480px;
     padding: 1rem;
     position: relative;
     border-radius: 5px;
@@ -18,10 +17,6 @@ body {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-}
-
-h1 {
-    color: #333;
 }
 
 #messages {
@@ -36,8 +31,37 @@ h1 {
     margin : 0 auto;
 }
 
+/* // estilos de mensajes */
+.mensajeYo {
+    /* // copiloto , que background color puedo usear para que se vea mejor */
+    background-color: #29299975;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    float: right;
+    margin-bottom: 0px;
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten */
+    overflow-wrap: break-word; /* Compatibilidad adicional */
+    word-break: break-word; /* Asegura que las palabras largas se dividan */
+}
+
+.mensajeAdmin {
+    background-color: #00800070;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    float: left;
+    margin-bottom: 0px;
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten */
+    overflow-wrap: break-word; /* Compatibilidad adicional */
+    word-break: break-word; /* Asegura que las palabras largas se dividan */
+}
+
 .controls {
     margin-top: 10px;
+    text-align: center;
 }
 
 #input {
