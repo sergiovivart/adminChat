@@ -2,13 +2,21 @@
 <html>
 <head>
     <title>Panel Admin</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Administrador</h1>
-    <select id="clientList"></select>
+    <h1>Panel de Administración</h1>
+    <select id="clientList">
+        <option value="" disabled selected>Selecciona un cliente</option>
+    </select>
     <div id="messages"></div>
-    <input id="input" placeholder="Mensaje al cliente">
-    <button onclick="sendMessage()">Enviar</button>
+    <div class="input-container">
+        <input id="input" placeholder="Mensaje al cliente">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <footer>
+        &copy; 2025 Panel Admin Chat
+    </footer>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="admin.js"></script>

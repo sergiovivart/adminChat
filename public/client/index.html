@@ -2,12 +2,15 @@
 <html>
 <head>
     <title>Cliente</title>
+     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <h1>Cliente</h1>
     <div id="messages"></div>
-    <input id="input" placeholder="Escribe un mensaje">
-    <button onclick="sendMessage()">Enviar</button>
+    <div>
+        <input id="input" placeholder="Escribe un mensaje">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="client.js"></script>
