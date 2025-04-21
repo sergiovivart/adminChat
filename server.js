@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
 
     //  Manejamos los mensajes que envien los cleintes
     socket.on('message-from-client', ({ toAdmin, message }) => {
-        if (adminSocket && toAdmin) {
+        if (adminSocket) {
             adminSocket.emit('message-from-client', {
                 clientId: socket.id,
                 message
