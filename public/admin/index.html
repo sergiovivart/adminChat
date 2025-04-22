@@ -3,23 +3,44 @@
 <head>
     <title>Panel Admin</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
     <h1>Panel de Administración</h1>
-    <select id="clientList">
-        <option value="" disabled selected>Selecciona un cliente</option>
-    </select>
-    <div id="messages"></div>
-    <div class="input-container">
-        <input id="input" placeholder="Mensaje al cliente">
-        <button onclick="sendMessage()">Enviar</button>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            
+            <div class="col col-lg-4">
+                <ul id="clientListSideBar" class="list-group">
+                    <li class="list-group-item">Clientes conectados</li>
+                  </ul>
+            </div>
+            <!-- fin de la columna  -->
+
+            <div class="col col-lg-8">
+                <p id="etiquetaIdConectado"> id socket conetado</p>
+                <div id="messages"></div>
+                <div class="input-container">
+                    <input id="input" placeholder="Mensaje al cliente">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+            <!-- finde la columna  -->
+
+        </div>
     </div>
+
+    
     <footer>
         &copy; 2025 Panel Admin Chat
     </footer>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="admin.js"></script>
+
 </body>
 </html>
 
