@@ -13,6 +13,10 @@ const PORT = 3000;
 app.use('/client', express.static(path.join(__dirname, 'public/client')));
 app.use('/admin', express.static(path.join(__dirname, 'public/admin')));
 
+app.get('/', function (req, res) {
+    return res.redirect('/client');
+});
+
 let adminSocket = null;
 let clients = {};
 
