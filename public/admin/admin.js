@@ -1,3 +1,18 @@
+// Verificar si el usuario está autenticado
+async function checkAuth() {
+    try {
+        const response = await fetch('/admin/check-auth');
+        if (!response.ok) {
+            window.location.href = '/admin/login';
+        }
+    } catch (error) {
+        window.location.href = '/admin/login';
+    }
+}
+
+// Verificar autenticación al cargar la página
+checkAuth();
+
 const socket = io();
 let currentClientId = null;
 

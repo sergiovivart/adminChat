@@ -9,9 +9,56 @@ const io = socketIo(server);
 
 const PORT = 3000;
 
+// Credenciales de administrador
+const ADMIN_CREDENTIALS = {
+    username: 'admin',
+    password: 'admin123'
+};
+
+// Variable para almacenar el estado de autenticación
+let isAuthenticated = false;
+
 // Servimos archivos estáticos
 app.use('/client', express.static(path.join(__dirname, 'public/client')));
 app.use('/admin', express.static(path.join(__dirname, 'public/admin')));
+
+// Middleware para parsear JSON
+app.use(express.json());
+
+// Ruta de login
+app.get('/admin/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/admin/login.html'));
+});
+
+// Endpoint para autenticación
+app.post('/admin/login', (req, res) => {
+    const { username, password } = req.body;
+
+    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+        isAuthenticated = true;
+        res.json({ success: true });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: 'Usuario o contraseña incorrectos'
+        });
+    }
+});
+
+// Endpoint para verificar autenticación
+app.get('/admin/check-auth', (req, res) => {
+    if (isAuthenticated) {
+        res.json({ authenticated: true });
+    } else {
+        res.status(401).json({ authenticated: false });
+    }
+});
+
+// Ruta para cerrar sesión
+app.get('/admin/logout', (req, res) => {
+    isAuthenticated = false;
+    res.redirect('/admin/login');
+});
 
 app.get('/', function (req, res) {
     return res.redirect('/client');
