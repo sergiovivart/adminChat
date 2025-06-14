@@ -37,12 +37,13 @@ body {
 .mensajeYo {
     /* // copiloto , que background color puedo usear para que se vea mejor */
     background-color: #29299975;
+    margin-bottom: 1rem !important;
+
     padding: 1rem;
     border-radius: 5px;
     width: 60%;
     position: relative;
     float: right;
-    margin-bottom: 0px;
     word-wrap: break-word;
     /* Permite que las palabras largas se ajusten */
     overflow-wrap: break-word;
@@ -53,12 +54,12 @@ body {
 
 .mensajeAdmin {
     background-color: #00800070;
+    margin-bottom: 1rem !important;
     padding: 1rem;
     border-radius: 5px;
     width: 60%;
     position: relative;
     float: left;
-    margin-bottom: 0px;
     word-wrap: break-word;
     /* Permite que las palabras largas se ajusten */
     overflow-wrap: break-word;

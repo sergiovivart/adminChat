@@ -44,6 +44,39 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.mensajeCliente {
+    background-color: #00800070;
+    margin-bottom: 1rem !important;
+    padding: 1rem;
+    border-radius: 5px;
+
+    width: 60%;
+    position: relative;
+    float: left;
+    word-wrap: break-word;
+    /* Permite que las palabras largas se ajusten */
+    overflow-wrap: break-word;
+    /* Compatibilidad adicional */
+    word-break: break-word;
+    /* Asegura que las palabras largas se dividan */
+}
+
+.mensajeAdmin {
+    background-color: #9b34f570;
+    margin-bottom: 1rem !important;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    float: right;
+    word-wrap: break-word;
+    /* Permite que las palabras largas se ajusten */
+    overflow-wrap: break-word;
+    /* Compatibilidad adicional */
+    word-break: break-word;
+    /* Asegura que las palabras largas se dividan */
+}
+
 #input {
     width: 70%;
     padding: 10px;

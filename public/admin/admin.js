@@ -65,7 +65,7 @@ socket.on('message-from-client', ({ clientId, message }) => {
     // Si el cliente actual es el que envió el mensaje, lo mostramos
     if (currentClientId === clientId) {
         const div = document.getElementById('messages');
-        div.innerHTML += `<p><strong>Cliente (${clientId}):</strong> ${message}</p>`;
+        div.innerHTML += `<p class="mensajeCliente"><strong>Cliente (${clientId}):</strong> ${message}</p>`;
     }
 });
 
@@ -86,9 +86,9 @@ ul.addEventListener('click', (e) => {
         if (clientMessages[clientId]) {
             clientMessages[clientId].forEach(msg => {
                 if (msg.sender === 'client') {
-                    div.innerHTML += `<p><strong>Cliente (${clientId}):</strong> ${msg.message}</p>`;
+                    div.innerHTML += `<p class="mensajeCliente"><strong>Cliente (${clientId}):</strong> ${msg.message}</p>`;
                 } else {
-                    div.innerHTML += `<p><strong>Yo:</strong> ${msg.message}</p>`;
+                    div.innerHTML += `<p class="mensajeAdmin"><strong>Yo:</strong> ${msg.message}</p>`;
                 }
             });
         }
@@ -119,6 +119,6 @@ function sendMessage() {
 
     // Mostramos el mensaje en el chat actual
     const div = document.getElementById('messages');
-    div.innerHTML += `<p><strong>Yo (a ${clientId}):</strong> ${msg}</p>`;
+    div.innerHTML += `<p class="mensajeAdmin"><strong>Yo (a ${clientId}):</strong> ${msg}</p>`;
     input.value = '';
 }
