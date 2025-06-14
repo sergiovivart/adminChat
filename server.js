@@ -75,10 +75,16 @@ io.on('connection', (socket) => {
         if (role === 'admin') { // registramos el admin
             adminSocket = socket;
             console.log('Administrador conectado');
+            // Notificar a todos los clientes que el admin está conectado
+            Object.values(clients).forEach(client => {
+                client.emit('admin-status-change', { connected: true });
+            });
         } else if (role === 'client') { // registramos el cliente
             clients[socket.id] = socket;
             console.log('Cliente conectado:', socket.id);
+            // Notificar al nuevo cliente si el admin está conectado
             if (adminSocket) {
+                socket.emit('admin-status-change', { connected: true });
                 adminSocket.emit('client-connected', socket.id);
             }
         }
@@ -115,6 +121,10 @@ io.on('connection', (socket) => {
         } else if (socket === adminSocket) { // quitamos el admin socket
             adminSocket = null;
             console.log('Administrador desconectado');
+            // Notificar a todos los clientes que el admin está desconectado
+            Object.values(clients).forEach(client => {
+                client.emit('admin-status-change', { connected: false });
+            });
         }
     });
 });
